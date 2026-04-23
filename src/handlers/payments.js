@@ -233,7 +233,7 @@ export const paymentsHandler = (bot) => {
     // Notify user
     const userText = 
       '❌ *To\'lov rad etildi!*\n\n' +
-      '📞 Iltimos, adminlar bilan bog\'laning: @nuxwarre, @rabbimov_ibrohim, @zaynet_07\n' +
+      '📞 Iltimos, admin bilan bog\'laning: @zaynet_07\n' +
       '🔄 Qayta urinib ko\'ring.';
     
     try {

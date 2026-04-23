@@ -79,8 +79,6 @@ export const backKeyboard = {
 // Contact admin keyboard
 export const contactAdminKeyboard = {
   inline_keyboard: [
-    [{ text: '👤 Admin: @nuxwarre', url: 'https://t.me/nuxwarre' }],
-    [{ text: '👤 Admin: @rabbimov_ibrohim', url: 'https://t.me/rabbimov_ibrohim' }],
     [{ text: '👤 Admin: @zaynet_07', url: 'https://t.me/zaynet_07' }],
     [{ text: '◀️ Orqaga', callback_data: 'back_to_menu' }]
   ]

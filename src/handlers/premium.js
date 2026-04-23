@@ -122,8 +122,6 @@ export const premiumHandler = (bot) => {
         `👛 *Balansdan ayirildi:* ${price.toLocaleString()} so'm\n\n` +
         `👤 *Sizning ID:* ${user.id}\n\n` +
         '📞 *Admin bilan bog\'lanish uchun:*\n' +
-        '• @nuxwarre\n' +
-        '• @rabbimov_ibrohim\n' +
         '• @zaynet_07\n\n' +
         '⏰ *Admin tez orada siz bilan bog\'lanadi!*';
       
