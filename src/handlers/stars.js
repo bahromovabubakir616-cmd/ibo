@@ -1,5 +1,6 @@
 import { starsKeyboard, createBuyKeyboard, backKeyboard } from '../../keyboards/keyboards.js';
 import { addOrder, getUserBalance, updateUserBalance } from '../config/database.js';
+import { ADMIN_IDS } from '../config/config.js';
 
 // Stars prices
 const STARS_PRICES = {
@@ -105,6 +106,21 @@ export const starsHandler = (bot) => {
         quantity: parseInt(quantity),
         price: price
       });
+      
+      // Notify Admin
+      const adminText = 
+        '🛍️ *Yangi buyurtma (Stars)!*\n\n' +
+        `👤 *Foydalanuvchi:* @${user.username || user.first_name}\n` +
+        `🆔 *ID:* ${user.id}\n` +
+        `📦 *Mahsulot:* ${quantity} Stars\n` +
+        `💰 *Summa:* ${price.toLocaleString()} so'm\n` +
+        '⏰ Iltimos, mijoz bilan bog\'laning!';
+      
+      try {
+        await ctx.telegram.sendMessage(ADMIN_IDS[0], adminText, { parse_mode: 'Markdown' });
+      } catch (err) {
+        console.error('Error notifying admin:', err);
+      }
       
       const text = 
         `🌟 *Buyurtma muvaffaqiyatli qabul qilindi!*\n\n` +

@@ -1,5 +1,6 @@
 import { premiumKeyboard, createBuyKeyboard, backKeyboard } from '../../keyboards/keyboards.js';
 import { addOrder, getUserBalance, updateUserBalance } from '../config/database.js';
+import { ADMIN_IDS } from '../config/config.js';
 
 // Premium prices
 const PREMIUM_PRICES = {
@@ -114,6 +115,21 @@ export const premiumHandler = (bot) => {
         quantity: 1,
         price: price
       });
+      
+      // Notify Admin
+      const adminText = 
+        '🛍️ *Yangi buyurtma (Premium)!*\n\n' +
+        `👤 *Foydalanuvchi:* @${user.username || user.first_name}\n` +
+        `🆔 *ID:* ${user.id}\n` +
+        `📦 *Mahsulot:* ${name}\n` +
+        `💰 *Summa:* ${price.toLocaleString()} so'm\n` +
+        '⏰ Iltimos, mijoz bilan bog\'laning!';
+      
+      try {
+        await ctx.telegram.sendMessage(ADMIN_IDS[0], adminText, { parse_mode: 'Markdown' });
+      } catch (err) {
+        console.error('Error notifying admin:', err);
+      }
       
       const text = 
         `💎 *Buyurtma muvaffaqiyatli qabul qilindi!*\n\n` +
