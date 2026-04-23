@@ -18,8 +18,32 @@ export const adminHandler = (bot) => {
       `👥 *Foydalanuvchilar soni:* ${usersCount}\n\n` +
       '📢 *Xabar yuborish uchun:* /broadcast\n' +
       '📊 *Statistika uchun:* /stats\n' +
+      '👥 *Foydalanuvchilar:* /users\n' +
       '💰 *Balans to\'ldirish uchun:* /addbalance <user_id> <summa>';
     
+    await ctx.replyWithMarkdown(text);
+  });
+
+  // Show all users
+  bot.command('users', async (ctx) => {
+    const userId = ctx.from.id;
+    if (!ADMIN_IDS.includes(userId)) return;
+
+    const users = await getAllUsers();
+    if (users.length === 0) {
+      await ctx.reply('Foydalanuvchilar hali yo\'q.');
+      return;
+    }
+
+    let text = '👥 *Barcha foydalanuvchilar:*\n\n';
+    users.forEach(u => {
+      text += `• ${u.firstName || 'Ismsiz'} (@${u.username || 'yo\'q'}) - ID: \`${u.id}\` - Balans: ${u.balance || 0} so'm\n`;
+    });
+
+    if (text.length > 4000) {
+      text = text.substring(0, 4000) + '... (va hokazo)';
+    }
+
     await ctx.replyWithMarkdown(text);
   });
   

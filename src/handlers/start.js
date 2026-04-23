@@ -27,6 +27,11 @@ export const startHandler = (bot) => {
       reply_markup: mainMenuKeyboard
     });
   });
+
+  // Handle /id command
+  bot.command('id', async (ctx) => {
+    await ctx.reply(`Sizning ID: ${ctx.from.id}`);
+  });
   
   // Handle back to menu button
   bot.action('back_to_menu', async (ctx) => {
