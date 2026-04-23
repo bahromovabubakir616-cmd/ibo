@@ -8,7 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Use root directory for database (Railway compatible)
-const dbFile = path.join(__dirname, '../../db.json');
+const DB_FILE = path.join(__dirname, '../../db.json');
+const DATA_DIR = path.dirname(DB_FILE);
 
 const defaultData = {
   users: [],
@@ -22,10 +23,9 @@ const ensureDirectoryExists = () => {
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true, mode: 0o777 });
-      console.log(`📁 Papka yaratildi: ${DATA_DIR}`);
     }
   } catch (err) {
-    console.error('❌ Papka yaratishda xato:', err.message);
+    // Ignore errors for root directory
   }
 };
 
