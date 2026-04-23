@@ -8,7 +8,7 @@ export const mainMenuKeyboard = {
     ],
     [
       { text: '💰 Balansim', callback_data: 'balance' },
-      { text: '✍️ Aloqa', callback_data: 'contact' },
+      { text: '✍️ Aloqa', callback_data: 'contact_us' },
       { text: '📊 Sharhlar', callback_data: 'reviews' }
     ]
   ]

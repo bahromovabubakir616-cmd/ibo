@@ -1,7 +1,7 @@
 import { contactAdminKeyboard } from '../../keyboards/keyboards.js';
 
 export const contactHandler = (bot) => {
-  bot.action('contact', async (ctx) => {
+  bot.action('contact_us', async (ctx) => {
     try {
       const text = 
         '✍️ *Aloqa*\n\n' +
@@ -11,17 +11,16 @@ export const contactHandler = (bot) => {
         '📞 *Tezkor javob garantilangan!*\n\n' +
         '👇 Admin bilan bog\'lanish uchun tugmani bosing:';
       
-      await ctx.editMessageText(text, {
-        parse_mode: 'Markdown',
+      await ctx.replyWithMarkdown(text, {
         reply_markup: contactAdminKeyboard
       });
     } catch (error) {
-      // Ignore edit errors
+      console.error('Contact edit error:', error);
     }
     try {
       await ctx.answerCbQuery();
     } catch (error) {
-      // Ignore callback query errors
+      console.error('Contact answer callback error:', error);
     }
   });
 };
