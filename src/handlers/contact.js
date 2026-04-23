@@ -6,7 +6,8 @@ export const contactHandler = (bot) => {
       const text = 
         '✍️ *Aloqa*\n\n' +
         '👨‍💻 *Adminlarimiz bilan bog\'lanish:*\n\n' +
-        '• @zeroxxxxxa\n' +
+        '• @nuxwarre\n' +
+        '• @rabbimov_ibrohim\n' +
         '• @zaynet_07\n\n' +
         '⏰ *Ish vaqti:* 09:00 - 22:00\n' +
         '📞 *Tezkor javob garantilangan!*\n\n' +

@@ -110,7 +110,7 @@ export const paymentsHandler = (bot) => {
         );
         
         await ctx.reply(
-          '✅ *To\'lov ma\'lumotlari yuborildi!*\n\n' +
+          '✅ *To\'lov ma\'lumotlari muvaffaqiyatli yuborildi!*\n\n' +
           '📞 Admin tez orada tekshirib balansingizni to\'ldiradi.\n' +
           '⏰ Iltimos, kuting...',
           { parse_mode: 'Markdown' }
@@ -165,7 +165,7 @@ export const paymentsHandler = (bot) => {
       );
       
       await ctx.reply(
-        '✅ *To\'lov ma\'lumotlari yuborildi!*\n\n' +
+        '✅ *To\'lov ma\'lumotlari muvaffaqiyatli yuborildi!*\n\n' +
         '📞 Admin tez orada tekshirib balansingizni to\'ldiradi.\n' +
         '⏰ Iltimos, kuting...',
         { parse_mode: 'Markdown' }
@@ -233,7 +233,7 @@ export const paymentsHandler = (bot) => {
     // Notify user
     const userText = 
       '❌ *To\'lov rad etildi!*\n\n' +
-      '📞 Iltimos, admin bilan bog\'laning: @zeroxxxxxa\n' +
+      '📞 Iltimos, adminlar bilan bog\'laning: @nuxwarre, @rabbimov_ibrohim, @zaynet_07\n' +
       '🔄 Qayta urinib ko\'ring.';
     
     try {

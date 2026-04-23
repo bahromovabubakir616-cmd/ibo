@@ -115,13 +115,14 @@ export const robuxHandler = (bot) => {
       });
       
       const text = 
-        `🎮 *Buyurtma qabul qilindi!*\n\n` +
+        `🎮 *Buyurtma muvaffaqiyatli qabul qilindi!*\n\n` +
         `📦 *Mahsulot:* Robux - ${quantity}${isSpecial ? ' (Maxsus)' : ''}\n` +
         `💰 *Narx:* ${price.toLocaleString()} so'm\n` +
         `👛 *Balansdan ayirildi:* ${price.toLocaleString()} so'm\n\n` +
         `👤 *Sizning ID:* ${user.id}\n\n` +
         '📞 *Admin bilan bog\'lanish uchun:*\n' +
-        '• @zeroxxxxxa\n' +
+        '• @nuxwarre\n' +
+        '• @rabbimov_ibrohim\n' +
         '• @zaynet_07\n\n' +
         '⏰ *Admin tez orada siz bilan bog\'lanadi!*';
       

@@ -1,17 +1,14 @@
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
-// 1. Manzillarni aniqlash
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// /src/config/dan 2 pog'ona yuqoriga chiqib, /data/ papkasini topamiz
-const ROOT_DIR = path.resolve(__dirname, '../../');
-const DATA_DIR = path.join(ROOT_DIR, 'data');
-const DB_FILE = path.join(DATA_DIR, 'db.json');
+// Use root directory for database (Railway compatible)
+const dbFile = path.join(__dirname, '../../db.json');
 
 const defaultData = {
   users: [],
